@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "portfolio-risk-engine"
+version = "1.0.0"
+description = "Algorithmic Portfolio Risk Engine"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "yfinance>=0.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+risk-engine = "portfolio_risk_engine.main:run"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
